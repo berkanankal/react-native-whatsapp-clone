@@ -8,8 +8,6 @@ const Message = ({ message }) => {
     return message.user.id === "u1";
   };
 
-  console.log(message);
-
   return (
     <View style={styles.container}>
       <View

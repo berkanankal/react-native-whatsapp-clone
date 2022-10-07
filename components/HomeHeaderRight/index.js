@@ -1,9 +1,9 @@
 import { View } from "react-native";
 import React from "react";
 import { Fontisto, Entypo } from "@expo/vector-icons";
-import styles from "./HeaderRight.style";
+import styles from "./style";
 
-const HeaderRight = () => {
+const HomeHeaderRight = () => {
   return (
     <View style={styles.container}>
       <Fontisto name="search" size={20} color="#fff" />
@@ -12,4 +12,4 @@ const HeaderRight = () => {
   );
 };
 
-export default HeaderRight;
+export default HomeHeaderRight;

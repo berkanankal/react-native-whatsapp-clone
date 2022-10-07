@@ -7,10 +7,10 @@ export default styles = StyleSheet.create({
     justifyContent: "space-between",
     padding: 10,
   },
-  lefContainer: {
+  left_container: {
     flexDirection: "row",
   },
-  midContainer: {
+  mid_container: {
     justifyContent: "space-around",
   },
   avatar: {

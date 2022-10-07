@@ -1,8 +1,10 @@
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, Image } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HeaderRight from "./components/HeaderRight";
+import HomeHeaderRight from "./components/HomeHeaderRight";
+import MessagesHeaderRight from "./components/MessagesHeaderRight";
 import Messages from "./pages/Messages";
 import Home from "./pages/Home";
+import MessagesHeaderLeft from "./components/MessagesHeaderLeft";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,18 +21,26 @@ const App = () => {
           headerTitleStyle: {
             fontWeight: "bold",
           },
-          headerRight: () => <HeaderRight />,
         }}
       >
         <Stack.Screen
           name="HomePage"
           component={Home}
-          options={{ title: "WhatsApp" }}
+          options={{
+            title: "WhatsApp",
+            headerRight: () => <HomeHeaderRight />,
+          }}
         />
         <Stack.Screen
           name="MessagesPage"
           component={Messages}
-          options={{ title: "Mesaj" }}
+          options={({ route }) => ({
+            headerTitle: () => null,
+            headerRight: () => <MessagesHeaderRight />,
+            headerLeft: () => (
+              <MessagesHeaderLeft chatPerson={route.params.chatPerson} />
+            ),
+          })}
         />
       </Stack.Navigator>
     </NavigationContainer>

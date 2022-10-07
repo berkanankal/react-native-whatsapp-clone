@@ -9,7 +9,7 @@ import styles from "./style";
 const Messages = () => {
   const route = useRoute();
 
-  // console.log(route.params)
+  const { chatPerson } = route.params;
 
   return (
     <ImageBackground style={styles.image_background} source={BG}>

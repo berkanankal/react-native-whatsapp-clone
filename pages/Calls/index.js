@@ -4,8 +4,11 @@ import styles from "./style";
 
 const Calls = () => {
   return (
-    <View>
-      <Text>Calls</Text>
+    <View style={styles.container}>
+      <Text style={styles.calls_text}>
+        WhatsApp kullanan kişileri aramak için ekranın altındaki " " simgesine
+        dokunun
+      </Text>
     </View>
   );
 };
