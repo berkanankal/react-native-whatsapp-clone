@@ -1,4 +1,4 @@
-import { NavigationContainer, Image } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeHeaderRight from "./components/HomeHeaderRight";
 import MessagesHeaderRight from "./components/MessagesHeaderRight";
@@ -16,6 +16,9 @@ const App = () => {
         screenOptions={{
           headerStyle: {
             backgroundColor: "#128C7E",
+            elevation: 0,
+            shadowOpacity: 0,
+            borderBottomWidth: 0,
           },
           headerTintColor: "#fff",
           headerTitleStyle: {
@@ -29,6 +32,7 @@ const App = () => {
           options={{
             title: "WhatsApp",
             headerRight: () => <HomeHeaderRight />,
+            headerShadowVisible: false,
           }}
         />
         <Stack.Screen
