@@ -11,4 +11,15 @@ export default StyleSheet.create({
     fontSize: 16,
     marginHorizontal: 50,
   },
+  add_call_icon: {
+    width: 56,
+    height: 56,
+    borderRadius: 56,
+    backgroundColor: "#128C7E",
+    position: "absolute",
+    right: 15,
+    bottom: 15,
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });

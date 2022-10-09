@@ -5,6 +5,7 @@ import MessagesHeaderRight from "./components/MessagesHeaderRight";
 import Messages from "./pages/Messages";
 import Home from "./pages/Home";
 import MessagesHeaderLeft from "./components/MessagesHeaderLeft";
+import ContactList from "./pages/ContactList";
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ const App = () => {
           headerTitleStyle: {
             fontWeight: "bold",
           },
+          headerRight: () => <HomeHeaderRight />,
         }}
       >
         <Stack.Screen
@@ -31,7 +33,6 @@ const App = () => {
           component={Home}
           options={{
             title: "WhatsApp",
-            headerRight: () => <HomeHeaderRight />,
             headerShadowVisible: false,
           }}
         />
@@ -45,6 +46,11 @@ const App = () => {
               <MessagesHeaderLeft chatPerson={route.params.chatPerson} />
             ),
           })}
+        />
+        <Stack.Screen
+          name="ContactListPage"
+          component={ContactList}
+          options={{ title: "Kişi Seç" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -1,9 +1,12 @@
 import { StyleSheet } from "react-native";
+import { Dimensions } from "react-native";
+
+const window = Dimensions.get("window");
 
 export default styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    width: "100%",
+    width: window.width,
     justifyContent: "space-between",
     padding: 10,
   },
@@ -12,6 +15,16 @@ export default styles = StyleSheet.create({
   },
   mid_container: {
     justifyContent: "space-around",
+  },
+  mid_container_top: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: window.width * 0.75,
+    alignItems: "center",
+  },
+  message_date: {
+    color: "grey",
+    fontSize: 13,
   },
   avatar: {
     width: 60,

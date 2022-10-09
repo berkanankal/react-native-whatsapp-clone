@@ -1,6 +1,8 @@
 import { View, Text, Image, TouchableWithoutFeedback } from "react-native";
 import styles from "./style";
 import { useNavigation } from "@react-navigation/native";
+import moment from "moment";
+import "moment/locale/tr";
 
 const Conversation = ({ conversation }) => {
   const navigation = useNavigation();
@@ -18,7 +20,15 @@ const Conversation = ({ conversation }) => {
             style={styles.avatar}
           />
           <View style={styles.mid_container}>
-            <Text style={styles.username}>{conversation.users[1].name}</Text>
+            <View style={styles.mid_container_top}>
+              <Text style={styles.username}>{conversation.users[1].name}</Text>
+              <Text style={styles.message_date}>
+                {moment(conversation.lastMessage.createdAt)
+                  .locale("tr")
+                  .startOf('hour')
+                  .fromNow()}
+              </Text>
+            </View>
             <Text numberOfLines={2} style={styles.status}>
               {conversation.lastMessage.content}
             </Text>

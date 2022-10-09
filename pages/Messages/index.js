@@ -5,6 +5,7 @@ import MessagesData from "../../data/MessagesData";
 import BG from "../../assets/BG.png";
 import Message from "../../components/Message";
 import styles from "./style";
+import MessageInput from "../../components/MessageInput";
 
 const Messages = () => {
   const route = useRoute();
@@ -18,6 +19,7 @@ const Messages = () => {
         renderItem={({ item }) => <Message message={item} />}
         // inverted
       />
+      <MessageInput />
     </ImageBackground>
   );
 };
